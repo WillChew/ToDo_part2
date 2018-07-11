@@ -38,14 +38,22 @@ class ViewController: UIViewController {
         }
         // get index path of the cell and send as bundle
         if segue.identifier == "detailSegue" {
-            if let customCell = sender as? CustomCellClass,
-            let detailVC = segue.destination as? DetailViewController {
-                
-                
-                detailVC.detailTitle = customCell.titleLabel.text
-                detailVC.detailDesc = customCell.descriptionLabel.text
-                guard let priority = customCell.priorityLabel.text, let priorityInt = Int16(priority) else {return}
-                detailVC.detailPriority = priorityInt
+            
+            if let indexPath = tableView.indexPathForSelectedRow{
+               
+                let detailVC = segue.destination as? DetailViewController
+                let task = dataManager.task(at: indexPath)
+                detailVC?.detailTitle = task.title
+                detailVC?.detailDesc = task.todoDescription
+                detailVC?.detailPriority = task.priority
+                //            if let customCell = sender as? CustomCellClass,
+                //            let detailVC = segue.destination as? DetailViewController {
+                //                detailVC.dataManager = dataManager
+                //                let task = dataManager.task(at:)
+                //                detailVC.detailTitle = customCell.titleLabel.text
+                //                detailVC.detailDesc = customCell.descriptionLabel.text
+                //                guard let priority = customCell.priorityLabel.text, let priorityInt = Int16(priority) else {return}
+                //                detailVC.detailPriority = priorityInt
             }
         }
     }

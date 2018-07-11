@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     var detailTitle: String?
     var detailDesc: String?
     var detailPriority: Int16 = 0
+    var dataManager: DataManager!
     
     
     @IBOutlet weak var detailTitleLabel: UILabel!
