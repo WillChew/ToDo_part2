@@ -50,6 +50,7 @@ extension ViewController: UITableViewDataSource {
         let task = dataManager.task(at: indexPath)
         let priorityStr = String(task.priority)
         
+       
         cell.titleLabel?.text = task.title
         cell.descriptionLabel?.text = task.todoDescription
         cell.priorityLabel.text = priorityStr
