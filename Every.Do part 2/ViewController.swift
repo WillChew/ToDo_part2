@@ -22,19 +22,20 @@ class ViewController: UIViewController {
     
     var dataManager: DataManager!
     
-    @IBOutlet weak var tableView: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        dataManager.createTask()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
         
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-//        dataManager.createTask()
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addTaskSegue" {
+            if let addVC = segue.destination as? AddViewController {
+                addVC.dataManager = dataManager
+            }
+        }
     }
 }
 
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataManager.getTaskCount() 
+        return dataManager.getTaskCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,7 +51,6 @@ extension ViewController: UITableViewDataSource {
         let task = dataManager.task(at: indexPath)
         let priorityStr = String(task.priority)
         
-       
         cell.titleLabel?.text = task.title
         cell.descriptionLabel?.text = task.todoDescription
         cell.priorityLabel.text = priorityStr

@@ -29,12 +29,12 @@ class DataManager: NSObject {
         return result
     }
     
-    internal func createTask() {
-        let task1 = Task(context: context)
-        task1.title = "Go to Class"
-        task1.priority = 1
-        task1.todoDescription = "Attend lecture and take notes"
-    }
+//    internal func createTask() {
+//        let task1 = Task(context: context)
+//        task1.title = "Go to Class"
+//        task1.priority = 1
+//        task1.todoDescription = "Attend lecture and take notes"
+//    }
     
     private func fetchWithSort() -> [Task] {
         let fetchRequest = NSFetchRequest<Task>(entityName: Key.task)
@@ -49,7 +49,25 @@ class DataManager: NSObject {
         return tasks[indexPath.row]
     }
     
-
+    internal func addTask(_ title: String, desc: String, priority: Int16) {
+        let task = Task(context: context)
+        task.title = title
+        task.todoDescription = desc
+        task.priority = priority
+        saveContext()
+    }
+    private func saveContext () {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    
     
     
 }
