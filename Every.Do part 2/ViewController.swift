@@ -36,6 +36,18 @@ class ViewController: UIViewController {
                 addVC.dataManager = dataManager
             }
         }
+        // get index path of the cell and send as bundle
+        if segue.identifier == "detailSegue" {
+            if let customCell = sender as? CustomCellClass,
+            let detailVC = segue.destination as? DetailViewController {
+                
+                
+                detailVC.detailTitle = customCell.titleLabel.text
+                detailVC.detailDesc = customCell.descriptionLabel.text
+                guard let priority = customCell.priorityLabel.text, let priorityInt = Int16(priority) else {return}
+                detailVC.detailPriority = priorityInt
+            }
+        }
     }
 }
 

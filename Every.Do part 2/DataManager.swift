@@ -38,7 +38,7 @@ class DataManager: NSObject {
     
     private func fetchWithSort() -> [Task] {
         let fetchRequest = NSFetchRequest<Task>(entityName: Key.task)
-        let sortDescriptor = NSSortDescriptor(key: "priority", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "priority", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         let tasks = try! context.fetch(fetchRequest)
         return tasks

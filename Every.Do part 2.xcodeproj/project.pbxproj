@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210A61FF20F69A4400588902 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210A61FE20F69A4400588902 /* DetailViewController.swift */; };
 		2161157F20F6732E00021F26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161157E20F6732E00021F26 /* AppDelegate.swift */; };
 		2161158120F6732E00021F26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2161158020F6732E00021F26 /* ViewController.swift */; };
 		2161158420F6732E00021F26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2161158220F6732E00021F26 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		210A61FE20F69A4400588902 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2161157B20F6732E00021F26 /* Every.Do part 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Every.Do part 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2161157E20F6732E00021F26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2161158020F6732E00021F26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				2161159320F67ABB00021F26 /* DataManager.swift */,
 				2161158020F6732E00021F26 /* ViewController.swift */,
 				2161158220F6732E00021F26 /* Main.storyboard */,
+				210A61FE20F69A4400588902 /* DetailViewController.swift */,
 				2161159520F6903C00021F26 /* AddViewController.swift */,
 				2161158820F6733500021F26 /* Assets.xcassets */,
 				2161158A20F6733500021F26 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 				2161159620F6903C00021F26 /* AddViewController.swift in Sources */,
 				2161158720F6732E00021F26 /* Every_Do_part_2.xcdatamodeld in Sources */,
 				2161159420F67ABB00021F26 /* DataManager.swift in Sources */,
+				210A61FF20F69A4400588902 /* DetailViewController.swift in Sources */,
 				2161158120F6732E00021F26 /* ViewController.swift in Sources */,
 				2161157F20F6732E00021F26 /* AppDelegate.swift in Sources */,
 			);
