@@ -56,6 +56,12 @@ class DataManager: NSObject {
         task.priority = priority
         saveContext()
     }
+    
+    internal func deleteTask(at indexPath: IndexPath) {
+      var tasks = fetchWithSort()
+        tasks.remove(at: indexPath.row)
+        saveContext()
+    }
     private func saveContext () {
         if context.hasChanges {
             do {
@@ -66,6 +72,8 @@ class DataManager: NSObject {
             }
         }
     }
+    
+    
     
     
     

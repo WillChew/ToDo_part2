@@ -14,8 +14,6 @@ class CustomCellClass: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priorityLabel: UILabel!
     
-    
-    
 }
 
 class ViewController: UIViewController {
@@ -40,7 +38,7 @@ class ViewController: UIViewController {
         if segue.identifier == "detailSegue" {
             
             if let indexPath = tableView.indexPathForSelectedRow{
-               
+                
                 let detailVC = segue.destination as? DetailViewController
                 let task = dataManager.task(at: indexPath)
                 detailVC?.detailTitle = task.title
@@ -76,9 +74,22 @@ extension ViewController: UITableViewDataSource {
         cell.priorityLabel.text = priorityStr
         return cell
     }
-    
-    
-    
 }
+
+//extension ViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath ) {
+//        if editingStyle == .delete {
+//            print("Deleted")
+//            dataManager.deleteTask(at: indexPath)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            
+//        }
+//        
+//        
+//    }
+//    
+//}
+
+
 
 
